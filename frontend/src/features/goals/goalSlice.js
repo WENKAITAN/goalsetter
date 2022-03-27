@@ -63,16 +63,10 @@ export const deleteGoal = createAsyncThunk('goals/delete', async (id, thunkAPI) 
 })
 
 export const goalSlice = createSlice({
-    name: "goal",
+    name: 'goal',
     initialState,
-    reducer:{
-        reset: (state) => {
-            state.goals = []
-            state.isError = false
-            state.isSuccess =  false
-            state.isLoading = false
-            state.message =  ''
-        }
+    reducers: {
+      reset: (state) => initialState,
     },
     extraReducers: (builder) => {
         builder
